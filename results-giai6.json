@@ -1,0 +1,304 @@
+{
+  "results": [
+    {
+      "date": "2025-09-01",
+      "timestamp": "2025-09-07 20:16:49",
+      "prize6_numbers": [
+        "846",
+        "167",
+        "326"
+      ],
+      "trung": 0,
+      "trat": 3,
+      "details": [
+        {
+          "number": "846",
+          "status": "trật"
+        },
+        {
+          "number": "167",
+          "status": "trật"
+        },
+        {
+          "number": "326",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-02",
+      "timestamp": "2025-09-07 20:16:49",
+      "prize6_numbers": [
+        "423",
+        "682",
+        "886"
+      ],
+      "trung": 1,
+      "trat": 2,
+      "details": [
+        {
+          "number": "423",
+          "status": "trật"
+        },
+        {
+          "number": "682",
+          "status": "trúng"
+        },
+        {
+          "number": "886",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-03",
+      "timestamp": "2025-09-07 20:16:49",
+      "prize6_numbers": [
+        "272",
+        "145",
+        "363"
+      ],
+      "trung": 0,
+      "trat": 3,
+      "details": [
+        {
+          "number": "272",
+          "status": "trật"
+        },
+        {
+          "number": "145",
+          "status": "trật"
+        },
+        {
+          "number": "363",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-04",
+      "timestamp": "2025-09-07 20:16:49",
+      "prize6_numbers": [
+        "913",
+        "668",
+        "770"
+      ],
+      "trung": 1,
+      "trat": 2,
+      "details": [
+        {
+          "number": "913",
+          "status": "trật"
+        },
+        {
+          "number": "668",
+          "status": "trúng"
+        },
+        {
+          "number": "770",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-05",
+      "timestamp": "2025-09-05 18:54:17",
+      "prize6_numbers": [
+        "370",
+        "237",
+        "517"
+      ],
+      "trung": 0,
+      "trat": 3,
+      "details": [
+        {
+          "number": "370",
+          "status": "trật"
+        },
+        {
+          "number": "237",
+          "status": "trật"
+        },
+        {
+          "number": "517",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-06",
+      "timestamp": "2025-09-06 18:54:14",
+      "prize6_numbers": [
+        "473",
+        "753",
+        "153"
+      ],
+      "trung": 0,
+      "trat": 3,
+      "details": [
+        {
+          "number": "473",
+          "status": "trật"
+        },
+        {
+          "number": "753",
+          "status": "trật"
+        },
+        {
+          "number": "153",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-07",
+      "timestamp": "2025-09-07 18:54:34",
+      "prize6_numbers": [
+        "055",
+        "957",
+        "432"
+      ],
+      "trung": 0,
+      "trat": 3,
+      "details": [
+        {
+          "number": "055",
+          "status": "trật"
+        },
+        {
+          "number": "957",
+          "status": "trật"
+        },
+        {
+          "number": "432",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-08",
+      "timestamp": "2025-09-08 18:54:57",
+      "prize6_numbers": [
+        "814",
+        "134",
+        "074"
+      ],
+      "trung": 2,
+      "trat": 1,
+      "details": [
+        {
+          "number": "814",
+          "status": "trật"
+        },
+        {
+          "number": "134",
+          "status": "trúng"
+        },
+        {
+          "number": "074",
+          "status": "trúng"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-09",
+      "timestamp": "2025-09-09 18:54:58",
+      "prize6_numbers": [
+        "388",
+        "087",
+        "085"
+      ],
+      "trung": 0,
+      "trat": 3,
+      "details": [
+        {
+          "number": "388",
+          "status": "trật"
+        },
+        {
+          "number": "087",
+          "status": "trật"
+        },
+        {
+          "number": "085",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-10",
+      "timestamp": "2025-09-10 18:54:17",
+      "prize6_numbers": [
+        "062",
+        "205",
+        "325"
+      ],
+      "trung": 0,
+      "trat": 3,
+      "details": [
+        {
+          "number": "062",
+          "status": "trật"
+        },
+        {
+          "number": "205",
+          "status": "trật"
+        },
+        {
+          "number": "325",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-11",
+      "timestamp": "2025-09-11 18:55:01",
+      "prize6_numbers": [
+        "350",
+        "643",
+        "296"
+      ],
+      "trung": 1,
+      "trat": 2,
+      "details": [
+        {
+          "number": "350",
+          "status": "trật"
+        },
+        {
+          "number": "643",
+          "status": "trúng"
+        },
+        {
+          "number": "296",
+          "status": "trật"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-12",
+      "timestamp": "2025-09-12 19:36:08",
+      "prize6_numbers": [
+        "926",
+        "348",
+        "349"
+      ],
+      "trung": 2,
+      "trat": 1,
+      "details": [
+        {
+          "number": "926",
+          "status": "trúng"
+        },
+        {
+          "number": "348",
+          "status": "trúng"
+        },
+        {
+          "number": "349",
+          "status": "trật"
+        }
+      ]
+    }
+  ]
+}

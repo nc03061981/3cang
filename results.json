@@ -1,0 +1,82 @@
+{
+  "results": [
+    {
+      "date": "2025-09-01",
+      "timestamp": "2025-09-02 09:02:02",
+      "special_number": "335",
+      "status": "trật"
+    },
+    {
+      "date": "2025-08-31",
+      "timestamp": "2025-09-02 09:05:03",
+      "special_number": "239",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-02",
+      "timestamp": "2025-09-02 18:54:29",
+      "special_number": "079",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-03",
+      "timestamp": "2025-09-03 18:54:02",
+      "special_number": "033",
+      "status": "trúng"
+    },
+    {
+      "date": "2025-09-04",
+      "timestamp": "2025-09-04 18:54:58",
+      "special_number": "943",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-05",
+      "timestamp": "2025-09-05 18:54:17",
+      "special_number": "878",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-06",
+      "timestamp": "2025-09-06 18:54:14",
+      "special_number": "093",
+      "status": "trúng"
+    },
+    {
+      "date": "2025-09-07",
+      "timestamp": "2025-09-07 18:54:34",
+      "special_number": "137",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-08",
+      "timestamp": "2025-09-08 18:54:57",
+      "special_number": "493",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-09",
+      "timestamp": "2025-09-09 18:54:58",
+      "special_number": "460",
+      "status": "trúng"
+    },
+    {
+      "date": "2025-09-10",
+      "timestamp": "2025-09-10 18:54:17",
+      "special_number": "231",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-11",
+      "timestamp": "2025-09-11 18:55:01",
+      "special_number": "217",
+      "status": "trật"
+    },
+    {
+      "date": "2025-09-12",
+      "timestamp": "2025-09-12 19:36:08",
+      "special_number": "686",
+      "status": "trật"
+    }
+  ]
+}
