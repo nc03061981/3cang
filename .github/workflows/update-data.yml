@@ -29,9 +29,6 @@ jobs:
       - name: predict data
         run: python predict_255_unique_from_model.py
       
-      - name: update readme
-        run: python update_readme.py
-
       - name: get current date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
