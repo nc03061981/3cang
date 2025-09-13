@@ -5,15 +5,15 @@ Mô hình dự đoán số xổ số sử dụng RNN với LSTM layers
 Hỗ trợ các loại dự đoán: raw_numbers, sum, counts
 """
 
-import numpy as np
-import pandas as pd
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np # type: ignore
+import pandas as pd # type: ignore
+import tensorflow as tf # type: ignore
+from tensorflow import keras # type: ignore
+from tensorflow.keras import layers # type: ignore
+from sklearn.preprocessing import MinMaxScaler # type: ignore
+from sklearn.model_selection import train_test_split # type: ignore
+import matplotlib.pyplot as plt # type: ignore
+import seaborn as sns # type: ignore
 import warnings
 import os
 import glob
@@ -262,7 +262,7 @@ class LotteryLSTMModel:
         # Training với class weights nếu là counts
         if self.model_type == "counts":
             # Tính class weights thực tế từ dữ liệu
-            from sklearn.utils.class_weight import compute_class_weight
+            from sklearn.utils.class_weight import compute_class_weight # type: ignore
             y_train_labels = np.argmax(y_train, axis=1)
             class_weights = compute_class_weight(
                 'balanced',
