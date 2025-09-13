@@ -10,16 +10,9 @@ jobs:
   update-data:
     runs-on: ubuntu-24.04
     steps:
-      - name: checkout repo and sub module
+      - name: checkout repo
         uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Init and update submodules
-        run: |
-         git submodule sync
-         git submodule update --init --recursive
-         
+        
       - name: setup python
         uses: actions/setup-python@v5
         with:
@@ -27,11 +20,6 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.txt
       
-      - name: install python packages
-        run: |
-          pip install -r requirements.txt
-          pip install -r vietnam-lottery-xsmb-analysis/requirements.txt
-
       - name: fetch data
         run: python fetch.py
 
