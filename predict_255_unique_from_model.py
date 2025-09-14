@@ -117,7 +117,7 @@ def predict_255_unique_numbers(model_path, scaler_path, recent_data):
         print(f"❌ Lỗi: {str(e)}")
         return []
 
-def save_to_json(numbers, filename="data-predict-today.json"):
+def save_to_json(numbers, filename):
     """Lưu số vào file JSON với ngày hiện tại (mỗi ngày chỉ lưu 1 lần)"""
     print(f"💾 Đang lưu vào file JSON: {filename}")
     
@@ -182,21 +182,24 @@ def main():
     # Dự đoán 255 số khác nhau
     scaler_path = latest_model.replace('.keras', '_scaler.npy')
     if os.path.exists(scaler_path):
-        predictions = predict_255_unique_numbers(latest_model, scaler_path, recent_data)
-        
-        if len(predictions) == 255:
-            # Chỉ lưu vào file JSON (không tạo file .txt)
-            save_to_json(predictions, "data-predict-today.json")
+        for step in range(4):
+            print(f"\n🔄 Lần dự đoán {step+1}/4 ...")
+            predictions = predict_255_unique_numbers(latest_model, scaler_path, recent_data)
             
-            print(f"\n{'='*60}")
-            print("🎯 HOÀN THÀNH!")
-            print("✅ 255 số khác nhau đã được dự đoán từ mô hình raw_numbers")
-            print("✅ Đã lưu vào file: data-predict-today.json")
-            print("✅ Dữ liệu cũ được giữ nguyên")
-            print("✅ Chỉ lưu định dạng JSON, không tạo file .txt")
-            print(f"{'='*60}")
-        else:
-            print(f"\n❌ Không thể dự đoán đủ 255 số khác nhau")
+            if len(predictions) == 255:
+                # Tạo tên file động theo số lần chạy
+                filename = f"data-predict-{step+1}.json"
+                save_to_json(predictions, filename)
+                
+                print(f"\n{'='*60}")
+                print("🎯 HOÀN THÀNH!")
+                print("✅ 255 số khác nhau đã được dự đoán từ mô hình raw_numbers")
+                print(f"✅ Đã lưu vào file: {filename}")
+                print("✅ Dữ liệu cũ được giữ nguyên")
+                print("✅ Chỉ lưu định dạng JSON, không tạo file .txt")
+                print(f"{'='*60}")
+            else:
+                print(f"\n❌ Không thể dự đoán đủ 255 số khác nhau")
     else:
         print(f"\n❌ Không tìm thấy scaler cho raw_numbers")
 
