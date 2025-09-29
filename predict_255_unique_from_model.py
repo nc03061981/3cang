@@ -153,6 +153,34 @@ def save_to_json(numbers, filename):
     print(f"\n📊 10 số đầu tiên: {','.join(formatted_numbers[:10])}")
     print(f"📊 10 số cuối cùng: {','.join(formatted_numbers[-10:])}")
     
+def save_to_json_in_one_file(numbers, filename):
+    """Lưu số vào file JSON với ngày hiện tại (mỗi ngày chỉ lưu 1 lần)"""
+    print(f"💾 Đang lưu vào file JSON: {filename}")
+    
+    # Lấy ngày hôm sau (chỉ lấy ngày, không lấy giờ)
+    current_date = datetime.now() + timedelta(days=1)
+    date_str = current_date.strftime("%Y-%m-%d")
+    
+    # Tạo dữ liệu mới (chỉ lưu formatted_numbers)
+    data_1 = [f"{num:03d}" for num in numbers[0]]
+    data_2 = [f"{num:03d}" for num in numbers[1]]
+    data_3 = [f"{num:03d}" for num in numbers[2]]
+    data_4 = [f"{num:03d}" for num in numbers[3]]
+    new_data = {
+        "date": date_str,
+        "data_1": data_1,
+        "data_2": data_2,
+        "data_3": data_3,
+        "data_4": data_4
+    }
+    
+    # Ghi đè file (luôn ghi mới, không ghi nối tiếp)
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(new_data, f, ensure_ascii=False, indent=4)
+    
+    print(f"✅ Đã lưu thành công vào file JSON: {filename}")
+    print(f"📅 Ngày tạo: {date_str}")
+    
 def main():
     """Hàm chính"""
     print("=== DỰ ĐOÁN 255 SỐ TỪ MÔ HÌNH RAW_NUMBERS ===\n")
@@ -182,11 +210,15 @@ def main():
     # Dự đoán 255 số khác nhau
     scaler_path = latest_model.replace('.keras', '_scaler.npy')
     if os.path.exists(scaler_path):
+        all_predictions = []  # mảng để chứa toàn bộ 4 lần dự đoán
         for step in range(4):
             print(f"\n🔄 Lần dự đoán {step+1}/4 ...")
             predictions = predict_255_unique_numbers(latest_model, scaler_path, recent_data)
             
             if len(predictions) == 255:
+                # ✅ Lưu vào mảng tổng
+                all_predictions.append(predictions)
+                
                 # Tạo tên file động theo số lần chạy
                 filename = f"data-predict-{step+1}.json"
                 save_to_json(predictions, filename)
@@ -200,6 +232,13 @@ def main():
                 print(f"{'='*60}")
             else:
                 print(f"\n❌ Không thể dự đoán đủ 255 số khác nhau")
+                
+        if len(all_predictions) == 4:
+            # Tạo 1 file
+            filename = "data-predict.json"
+            save_to_json_in_one_file(all_predictions, filename)
+        else:
+            print(f"⚠️ Chỉ có {len(all_predictions)} lần dự đoán, chưa đủ 4.")
     else:
         print(f"\n❌ Không tìm thấy scaler cho raw_numbers")
 
