@@ -116,44 +116,8 @@ def predict_255_unique_numbers(model_path, scaler_path, recent_data):
     except Exception as e:
         print(f"❌ Lỗi: {str(e)}")
         return []
-
+  
 def save_to_json(numbers, filename):
-    """Lưu số vào file JSON với ngày hiện tại (mỗi ngày chỉ lưu 1 lần)"""
-    print(f"💾 Đang lưu vào file JSON: {filename}")
-    
-    # Lấy ngày hôm sau (chỉ lấy ngày, không lấy giờ)
-    current_date = datetime.now() + timedelta(days=1)
-    date_str = current_date.strftime("%Y-%m-%d")
-    
-    # Tạo dữ liệu mới (chỉ lưu formatted_numbers)
-    formatted_numbers = [f"{num:03d}" for num in numbers]
-    new_data = {
-        "date": date_str,
-        "timestamp": current_date.timestamp(),
-        "total_numbers": len(numbers),
-        "formatted_numbers": formatted_numbers,
-        "model_info": {
-            "type": "raw_numbers",
-            "temperature": 3.0,
-            "top_k": 10,
-            "unique_count": len(set(numbers))
-        }
-    }
-    
-    # Ghi đè file (luôn ghi mới, không ghi nối tiếp)
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(new_data, f, ensure_ascii=False, indent=4)
-    
-    print(f"✅ Đã lưu thành công vào file JSON: {filename}")
-    print(f"📅 Ngày tạo: {date_str}")
-    print(f"📊 Tổng số: {len(numbers)}")
-    print(f"🔢 Số khác nhau: {len(set(numbers))}")
-    
-    # Hiển thị 10 số đầu và cuối để kiểm tra
-    print(f"\n📊 10 số đầu tiên: {','.join(formatted_numbers[:10])}")
-    print(f"📊 10 số cuối cùng: {','.join(formatted_numbers[-10:])}")
-    
-def save_to_json_in_one_file(numbers, filename):
     """Lưu số vào file JSON với ngày hiện tại (mỗi ngày chỉ lưu 1 lần)"""
     print(f"💾 Đang lưu vào file JSON: {filename}")
     
@@ -219,16 +183,10 @@ def main():
                 # ✅ Lưu vào mảng tổng
                 all_predictions.append(predictions)
                 
-                # Tạo tên file động theo số lần chạy
-                filename = f"data-predict-{step+1}.json"
-                save_to_json(predictions, filename)
-                
                 print(f"\n{'='*60}")
                 print("🎯 HOÀN THÀNH!")
                 print("✅ 255 số khác nhau đã được dự đoán từ mô hình raw_numbers")
-                print(f"✅ Đã lưu vào file: {filename}")
-                print("✅ Dữ liệu cũ được giữ nguyên")
-                print("✅ Chỉ lưu định dạng JSON, không tạo file .txt")
+                print("✅ Đã ghi tạm vào mảng all_predictions")
                 print(f"{'='*60}")
             else:
                 print(f"\n❌ Không thể dự đoán đủ 255 số khác nhau")
@@ -236,7 +194,7 @@ def main():
         if len(all_predictions) == 4:
             # Tạo 1 file
             filename = "data-predict.json"
-            save_to_json_in_one_file(all_predictions, filename)
+            save_to_json(all_predictions, filename)
         else:
             print(f"⚠️ Chỉ có {len(all_predictions)} lần dự đoán, chưa đủ 4.")
     else:
