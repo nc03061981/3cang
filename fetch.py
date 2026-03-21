@@ -10,9 +10,18 @@ import requests # type: ignore
 
 def get_data_dacbiet(url: str) -> str | None:
     try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        data = response.text.strip()
+        file_path = 'last-data-dacbiet.txt'
+
+        # Kiểm tra file có tồn tại và không rỗng không
+        if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = f.read().strip() # .strip() để loại bỏ khoảng trắng/xuống dòng thừa
+            print(f"Đã lấy dữ liệu từ file: {data}")
+        else:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            data = response.text.strip()
+            print(f"Đã lấy dữ liệu từ fetch: {data}")
 
         # Kiểm tra hợp lệ: phải đúng 3 ký tự
         if len(data) == 3:
