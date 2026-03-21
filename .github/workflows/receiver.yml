@@ -1,0 +1,24 @@
+name: Receive Data from PHP
+on:
+  repository_dispatch:
+    types: [receiver_data] # Tên sự kiện (tự đặt)
+
+jobs:
+  save_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Save data to file
+        run: |
+          # Lấy dữ liệu từ payload mà PHP gửi sang
+          echo "${{ github.event.client_payload.content }}" > last-data-dacbiet.txt
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add last-data-dacbiet.txt
+          git commit -m "Update last-data-dacbiet.txt from PHP" || exit 0
+          git push
