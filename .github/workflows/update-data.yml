@@ -1,16 +1,20 @@
 name: Update data
 
 on:
-  schedule:
-    - cron: 45 12 * * * # 19:45 PM in Vietnam
+  workflow_run:
+    workflows: ["Receive Data from PHP"]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   update-data:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-24.04
     steps:
-      - name: checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: main
         
       - name: setup python
         uses: actions/setup-python@v5
