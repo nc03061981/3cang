@@ -1,14 +1,10 @@
 name: Update data
 
 on:
-  workflow_run:
-    workflows: ["Receive Data from PHP"]
-    types: [completed]
-  workflow_dispatch:
+  workflow_dispatch: # Chỉ cần sự kiện này là đủ để cho phép gọi từ API hoặc bấm tay
 
 jobs:
   update-data:
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'}}
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
